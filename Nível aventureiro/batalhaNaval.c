@@ -1,15 +1,16 @@
-
 #include <stdio.h>
 
+#define horizontal 10
+#define vertical 10
 
 int main() {
 
      /*###########################
        # DECLARAÇÃO DE VARIÁVEIS #
        ###########################*/
-    char coordenadas_letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-    int coordenadas_numeros[10];
-    int tabuleiro[10][10];
+    char coordenadas_letras[horizontal] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
+    int coordenadas_numeros[vertical];
+    int tabuleiro[horizontal][vertical];
     int navio_1[3] = {3, 3, 3};
     int navio_2[3] = {3, 3, 3};
     
@@ -24,8 +25,8 @@ int main() {
       #############################*/
 
       // *N* para números e *L* para letras
-     for (int N = 0; N < 10; N++){
-        for (int L = 0; L < 10; L++){
+     for (int N = 0; N < vertical; N++){
+        for (int L = 0; L < horizontal; L++){
             tabuleiro[N][L] = 0; // Preenchimento do tabuleiro com 0
         }
      }
@@ -55,18 +56,17 @@ int main() {
     /*#############################
       # APRESENTAÇÃO DO TABULEIRO #
       #############################*/
-      // COORDENADAS SUPERIORES (LETRAS)
-     for (int i = 0; i < 10; i++){
+      // COORDENADAS SUPERIORES (LETRAS) 
+     for (int i = 0; i < horizontal; i++){
         printf("%c ", coordenadas_letras[i]);
      }
      printf("\n");
 
-     // COORDENADAS LATEAIS (NÚMEROS) + POSICIONAMENTO
-     for (int j = 0; j < 10; j++){
-         int a = (j + 1);
-         coordenadas_numeros[j] = a;
-         j < 9? printf(" %d ",coordenadas_numeros[j]) : printf("%d ",coordenadas_numeros[j]);
-         /* Exceção à 10ª linha para organização do espaçamento da tabela */  
+     // COORDENADAS LATERAIS (NÚMEROS) + POSICIONAMENTO
+     for (int j = 0; j < vertical; j++){
+         coordenadas_numeros[j] = (j + 1);
+         printf("%2d ",coordenadas_numeros[j]);
+         /* Aumento da casa decimal para organização do espaçamento da tabela */  
         for(int k = 0; k < 10; k++){
              printf("%d ", tabuleiro[j][k]);
              /* Apresentação da tabela com os valores dos navios */  
