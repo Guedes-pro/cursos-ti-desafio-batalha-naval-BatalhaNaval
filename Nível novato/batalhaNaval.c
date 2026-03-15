@@ -9,6 +9,9 @@ int main() {
     char coordenadas_letras[10] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
     int coordenadas_numeros[10];
     int tabuleiro[10][10];
+    int navio_1[3] = {3, 3, 3};
+    int navio_2[3] = {3, 3, 3};
+    
     
 
 
@@ -18,18 +21,15 @@ int main() {
     /*#############################
       # POSICIONAMENTO DOS NAVIOS #
       #############################*/
+
       // *N* para números e *L* para letras
      for (int N = 0; N < 10; N++){
         for (int L = 0; L < 10; L++){
-            if(N == 4 && L > 1 && L < 5 || N > 2 && N < 6 && L == 6){
-                tabuleiro[N][L] = 3;
-            } else {
-                tabuleiro[N][L] = 0;
-            }
+            tabuleiro[N][L] = 0; // Preenchimento do tabuleiro com 0
         }
      }
-            // Declaração de coordenadas dos navios 
-            /* (C5, D5, D5) e (G4, G5, G6) = (Condição p/ navio 1 || Condição p/ navio 2)
+            // Declaração de coordenadas dos navios  
+            /* (C5, D5, D5) e (G4, G5, G6) 
               A B C D E F G H I J 
             1 0 0 0 0 0 0 0 0 0 0 
             2 0 0 0 0 0 0 0 0 0 0 
@@ -41,6 +41,15 @@ int main() {
             8 0 0 0 0 0 0 0 0 0 0 
             9 0 0 0 0 0 0 0 0 0 0 
            10 0 0 0 0 0 0 0 0 0 0*/
+
+           
+                tabuleiro[4][2] = navio_1[0];
+                tabuleiro[4][3] = navio_1[1];
+                tabuleiro[4][4] = navio_1[2];
+           
+                tabuleiro[3][6] = navio_2[0];
+                tabuleiro[4][6] = navio_2[1];
+                tabuleiro[5][6] = navio_2[2];
 
     /*#############################
       # APRESENTAÇÃO DO TABULEIRO #
