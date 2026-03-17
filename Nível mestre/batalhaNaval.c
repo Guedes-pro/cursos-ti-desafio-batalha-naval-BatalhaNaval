@@ -3,6 +3,8 @@
 #define horizontal 10
 #define vertical 10
 
+void cone(){int tabuleiro[vertical][horizontal], int}
+
 int main() {
 
      /*###########################
@@ -77,7 +79,7 @@ int main() {
          coordenadas_numeros[j] = (j + 1);
          printf("%2d ",coordenadas_numeros[j]);
          /* Aumento da casa decimal para organização do espaçamento da tabela */  
-        for(int k = 0; k < 10; k++){
+        for(int k = 0; k < vertical; k++){
              printf("%d ", tabuleiro[k][j]);
              /* Apresentação da tabela com os valores dos navios */  
             }
