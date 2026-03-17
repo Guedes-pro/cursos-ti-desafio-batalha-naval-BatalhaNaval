@@ -2,8 +2,17 @@
 
 #define horizontal 10
 #define vertical 10
+#define tamanho_habilidade 7
 
-void cone(int tabuleiro[vertical][horizontal], int){}
+void cone(int tabuleiro[tamanho_habilidade][tamanho_habilidade], int n, int m){
+   for(int i = 0; i < tamanho_habilidade; i++){
+      for(int j = 0; j < tamanho_habilidade; i++){
+         if (tabuleiro[i][j])
+      }
+      
+      printf("\n");
+   }
+}
 
 int main() {
 
