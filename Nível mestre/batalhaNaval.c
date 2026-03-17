@@ -3,7 +3,7 @@
 #define horizontal 10
 #define vertical 10
 
-void cone(){int tabuleiro[vertical][horizontal], int}
+void cone(int tabuleiro[vertical][horizontal], int){}
 
 int main() {
 
