@@ -76,7 +76,15 @@ int main() {
     int navio_2[3] = {3, 3, 3};
     int navio_3[3] = {3, 3, 3};
     int navio_4[3] = {3, 3, 3};
-
+    //COORDENADAS DOS NAVIOS:
+    // diagonal *\*
+    int coluna_inicial_1 = 1,  coluna_final_1 = 3;
+   // diagonal */*
+    int coluna_inicial_2 = 7,  coluna_final_2 = 9;
+    // horizontal
+    int linha_3 = 6, coluna_inicial_3 = 3, coluna_final_3 = 5; 
+    // vertical
+    int linha_inicial_4 = 2, linha_final_4 = 4, coluna_4 = 4;
     
     
     
@@ -93,16 +101,18 @@ int main() {
      for (int i = 0; i < vertical; i++){
         for (int j = 0; j < horizontal; j++){
             tabuleiro[i][j] = 0; // Preenchimento do tabuleiro com 0
-            // Declaração de coordenadas dos navios DIAGONAL
-            if(i == j && j > 0 && j < 4){ 
-             tabuleiro[i][j] = navio_1[i - 1];
-            } else if((j + i) == 9 && j > 6){
+
+            // Declaração de coordenadas dos navios DIAGONAL:
+            // DIAGONAL *\*:
+            if(i == j && j >= coluna_inicial_1 && j <= coluna_final_1){ 
+             tabuleiro[i][j] = navio_1[j - 1];
+            } else if((i + j) == 9 && j >= coluna_inicial_2 && j <= coluna_final_2){
              tabuleiro[i][j] = navio_2[j - 7];
             } 
-            // Declaração de coordenadas dos navios VERTICAL/HORIZONTAL
-            else if(i == 6 && j > 2 && j < 6){ 
+            // Declaração de coordenadas dos navios HORIZONTAL/VERTICAL
+            else if(i == linha_3 && j >= coluna_inicial_3 && j <= coluna_final_3){ 
              tabuleiro[i][j] = navio_3[j - 3];
-            } else if(j == 4 && i > 1 && i < 5){
+            } else if(j == coluna_4 && i >= linha_inicial_4 && i <= linha_final_4){
              tabuleiro[i][j] = navio_4[i - 2];
             }
         }
@@ -177,7 +187,7 @@ int main() {
       # APRESENTAÇÃO DO TABULEIRO #
       #############################*/
       
-      // COORDENADAS DAS HABILIDADES
+      //  ESCOLHA DAS COORDENADAS DAS HABILIDADES
     aplicar_hab(tabuleiro, habilidade_cone, 0, 0);
     aplicar_hab(tabuleiro, habilidade_cruz, 4, 5);
     aplicar_hab(tabuleiro, habilidade_octaedro, 5, 0);
