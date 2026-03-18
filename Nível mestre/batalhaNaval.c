@@ -106,10 +106,11 @@ int main() {
             // DIAGONAL *\*:
             if(i == j && j >= coluna_inicial_1 && j <= coluna_final_1){ 
              tabuleiro[i][j] = navio_1[j - 1];
+            // DIAGONAL */*:
             } else if((i + j) == 9 && j >= coluna_inicial_2 && j <= coluna_final_2){
              tabuleiro[i][j] = navio_2[j - 7];
             } 
-            // Declaração de coordenadas dos navios HORIZONTAL/VERTICAL
+            // Declaração de coordenadas dos navios HORIZONTAL/VERTICAL:
             else if(i == linha_3 && j >= coluna_inicial_3 && j <= coluna_final_3){ 
              tabuleiro[i][j] = navio_3[j - 3];
             } else if(j == coluna_4 && i >= linha_inicial_4 && i <= linha_final_4){
@@ -194,7 +195,6 @@ int main() {
 
       // COORDENADAS SUPERIORES (LETRAS) 
     printf("   ");// organização das letras
-
     for (int i = 0; i < horizontal; i++){
         printf("%c ", coordenadas_letras[i]);
      }
@@ -213,7 +213,7 @@ int main() {
      }
     printf("\n");  
 
-          // APRESENTAÇÃOFINAL:
+          // APRESENTAÇÃO FINAL:
 
           /*  A B C D E F G H I J 
             1 0 0 5 0 0 0 0 0 0 3 
